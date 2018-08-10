@@ -9,6 +9,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y  python3 python3-pip && \
     pip3 install --upgrade pip setuptools && \
     pip install slack-export-viewer && \
+    rm -fr /root/.cache && \
     apt-get remove --purge --auto-remove -y python3-pip && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
